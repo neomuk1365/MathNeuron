@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block extra_css %}
+<style>
+    .dashboard-header {
+        padding: 4rem 0;
+        border-bottom: 1px solid var(--border-color);
+        background-color: var(--bg-secondary);
+    }
+    
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        margin-top: -2rem;
+    }
+    
+    .stat-card {
+        text-align: center;
+        padding: 1.5rem;
+    }
+    
+    .stat-value {
+        font-size: 2.5rem;
+        font-family: var(--font-heading);
+        color: var(--primary-color);
+        font-weight: 800;
+        margin-bottom: 0.5rem;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="dashboard-header">
+    <div class="container">
+        <h1>Your Learning Journey</h1>
+        <p class="text-secondary">Track your progress and intuition building.</p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="stats-grid">
+        <div class="card stat-card">
+            <div class="stat-value">0</div>
+            <div class="text-secondary font-weight-bold">Chapters Completed</div>
+        </div>
+        <div class="card stat-card">
+            <div class="stat-value">{{ correct_attempts }}</div>
+            <div class="text-secondary font-weight-bold">Intuition Checks Passed</div>
+        </div>
+        <div class="card stat-card">
+            <div class="stat-value">{{ xp }} XP</div>
+            <div class="text-secondary font-weight-bold">Experience Earned</div>
+        </div>
+    </div>
+    
+    <div class="mt-8 mb-8">
+        <div class="card">
+            <h3 class="mb-4">Recommended Next Step</h3>
+            <p class="text-secondary">You haven't started yet! Your journey into Machine Learning mathematics begins with understanding how to count arrangements intelligently.</p>
+            <div class="mt-4">
+                <a href="{{ url_for('main.chapter', slug='principle-of-counting') }}" class="btn btn-primary">Start Principle of Counting</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

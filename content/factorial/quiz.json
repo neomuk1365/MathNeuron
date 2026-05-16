@@ -1,0 +1,238 @@
+[
+  {
+    "topic_slug": "factorial-thinking-practice",
+    "type": "mcq",
+    "difficulty": 1,
+    "question_text": "Arrange: A, B. How many ways?",
+    "options": [
+      {"id": "A", "text": "2"},
+      {"id": "B", "text": "4"},
+      {"id": "C", "text": "1"},
+      {"id": "D", "text": "3"}
+    ],
+    "correct_answer": "A",
+    "explanation": {
+      "step_by_step": "1. First slot: 2 choices\n2. Second slot: 1 choice\n3. Multiply: 2 x 1 = 2",
+      "intuition": "The arrangements are AB and BA. Choices shrink after the first pick.",
+      "tree": {
+        "root": "Slots",
+        "level1": {"name": "Slot 1", "options": ["A", "B"]},
+        "level2": {"name": "Slot 2", "options": ["Only 1 left"]}
+      },
+      "common_mistakes": {
+        "B": "You assumed letters could be repeated (2 x 2). Arranging implies you use what you have without repeating."
+      }
+    }
+  },
+  {
+    "topic_slug": "factorial-thinking-practice",
+    "type": "mcq",
+    "difficulty": 1,
+    "question_text": "Arrange: A, B, C. Think in slots.",
+    "options": [
+      {"id": "A", "text": "9"},
+      {"id": "B", "text": "6"},
+      {"id": "C", "text": "3"},
+      {"id": "D", "text": "27"}
+    ],
+    "correct_answer": "B",
+    "explanation": {
+      "step_by_step": "1. First slot: 3 choices\n2. Second slot: 2 choices\n3. Third slot: 1 choice\n4. Multiply: 3 x 2 x 1 = 6",
+      "intuition": "Every time you place a letter, your available pool shrinks by 1. 3! = 6.",
+      "tree": {
+        "root": "Slots",
+        "level1": {"name": "Slot 1", "options": ["3 choices"]},
+        "level2": {"name": "Slot 2", "options": ["2 remaining"]},
+        "level3": {"name": "Slot 3", "options": ["1 remaining"]}
+      },
+      "common_mistakes": {
+        "A": "You multiplied 3 x 3, assuming choices don't shrink."
+      }
+    }
+  },
+  {
+    "topic_slug": "factorial-thinking-practice",
+    "type": "mcq",
+    "difficulty": 2,
+    "question_text": "Arrange 4 students in a line.",
+    "options": [
+      {"id": "A", "text": "16"},
+      {"id": "B", "text": "24"},
+      {"id": "C", "text": "4"},
+      {"id": "D", "text": "12"}
+    ],
+    "correct_answer": "B",
+    "explanation": {
+      "step_by_step": "1. First position: 4 students\n2. Second position: 3 students\n3. Third position: 2 students\n4. Fourth position: 1 student\n5. Multiply: 4 x 3 x 2 x 1 = 24",
+      "intuition": "You are naturally seeing slot filling and shrinking choices. 4! = 24.",
+      "common_mistakes": {
+        "A": "You assumed choices don't shrink (4 x 4)."
+      }
+    }
+  },
+  {
+    "topic_slug": "factorial-thinking-practice",
+    "type": "mcq",
+    "difficulty": 2,
+    "question_text": "Arrange 5 books on a shelf.",
+    "options": [
+      {"id": "A", "text": "120"},
+      {"id": "B", "text": "25"},
+      {"id": "C", "text": "60"},
+      {"id": "D", "text": "5"}
+    ],
+    "correct_answer": "A",
+    "explanation": {
+      "step_by_step": "1. Slot 1: 5 choices\n2. Slot 2: 4 choices\n3. Slot 3: 3 choices\n4. Slot 4: 2 choices\n5. Slot 5: 1 choice\n6. Multiply: 120",
+      "intuition": "This is REAL understanding. Not just memorizing 5! = 120, but seeing the 5 -> 4 -> 3 -> 2 -> 1 process.",
+      "common_mistakes": {
+        "B": "Added choices instead of realizing it's a sequence."
+      }
+    }
+  },
+  {
+    "topic_slug": "factorial-thinking-practice",
+    "type": "mcq",
+    "difficulty": 2,
+    "question_text": "Arrange 6 players in a row.",
+    "options": [
+      {"id": "A", "text": "36"},
+      {"id": "B", "text": "720"},
+      {"id": "C", "text": "120"},
+      {"id": "D", "text": "6"}
+    ],
+    "correct_answer": "B",
+    "explanation": {
+      "step_by_step": "1. Slots: 6 x 5 x 4 x 3 x 2 x 1\n2. Multiply: 720",
+      "intuition": "6! = 720. The pool shrinks by 1 each time a player is placed.",
+      "common_mistakes": {
+        "A": "You multiplied 6 x 6 instead of 6!."
+      }
+    }
+  },
+  {
+    "topic_slug": "factorial-thinking-practice",
+    "type": "mcq",
+    "difficulty": 2,
+    "question_text": "How many ways can 3 friends sit on 3 chairs?",
+    "options": [
+      {"id": "A", "text": "9"},
+      {"id": "B", "text": "6"},
+      {"id": "C", "text": "3"},
+      {"id": "D", "text": "27"}
+    ],
+    "correct_answer": "B",
+    "explanation": {
+      "step_by_step": "1. Chair 1: 3 choices\n2. Chair 2: 2 choices\n3. Chair 3: 1 choice\n4. Multiply: 6",
+      "intuition": "Because chairs create order! A on chair1 and B on chair2 is different from B on chair1 and A on chair2.",
+      "common_mistakes": {
+        "A": "3 x 3 implies friends can duplicate themselves onto multiple chairs."
+      }
+    }
+  },
+  {
+    "topic_slug": "factorial-thinking-practice",
+    "type": "mcq",
+    "difficulty": 2,
+    "question_text": "How many ways can 4 cars park in 4 spots?",
+    "options": [
+      {"id": "A", "text": "24"},
+      {"id": "B", "text": "16"},
+      {"id": "C", "text": "4"},
+      {"id": "D", "text": "8"}
+    ],
+    "correct_answer": "A",
+    "explanation": {
+      "step_by_step": "1. Spot 1: 4 cars\n2. Spot 2: 3 cars\n3. Spot 3: 2 cars\n4. Spot 4: 1 car\n5. Multiply: 24",
+      "intuition": "Again: parking spots create arrangement/order. The cars are unique and the spots are unique.",
+      "common_mistakes": {
+        "B": "4 x 4."
+      }
+    }
+  },
+  {
+    "topic_slug": "factorial-thinking-practice",
+    "type": "mcq",
+    "difficulty": 3,
+    "question_text": "Arrange letters: D O G",
+    "options": [
+      {"id": "A", "text": "3"},
+      {"id": "B", "text": "9"},
+      {"id": "C", "text": "6"},
+      {"id": "D", "text": "27"}
+    ],
+    "correct_answer": "C",
+    "explanation": {
+      "step_by_step": "1. Slot 1: 3\n2. Slot 2: 2\n3. Slot 3: 1\n4. Multiply: 6",
+      "intuition": "DOG, DGO, ODG, OGD, GOD, GDO. Writing arrangements physically builds combinatorics intuition much faster.",
+      "common_mistakes": {
+        "A": "You just counted the letters."
+      }
+    }
+  },
+  {
+    "topic_slug": "factorial-thinking-practice",
+    "type": "mcq",
+    "difficulty": 3,
+    "question_text": "Arrange 7 people in a queue.",
+    "options": [
+      {"id": "A", "text": "49"},
+      {"id": "B", "text": "720"},
+      {"id": "C", "text": "5040"},
+      {"id": "D", "text": "7"}
+    ],
+    "correct_answer": "C",
+    "explanation": {
+      "step_by_step": "1. 7! = 7 x 6 x 5 x 4 x 3 x 2 x 1\n2. Multiply: 5040",
+      "intuition": "Seven slots, shrinking choices.",
+      "common_mistakes": {
+        "A": "7 x 7."
+      }
+    }
+  },
+  {
+    "topic_slug": "factorial-thinking-practice",
+    "type": "mcq",
+    "difficulty": 3,
+    "question_text": "Arrange 8 different mobile phones on a table.",
+    "options": [
+      {"id": "A", "text": "64"},
+      {"id": "B", "text": "40320"},
+      {"id": "C", "text": "5040"},
+      {"id": "D", "text": "8"}
+    ],
+    "correct_answer": "B",
+    "explanation": {
+      "step_by_step": "1. 8! = 8 x 7 x 6 x 5 x 4 x 3 x 2 x 1\n2. Multiply: 40320",
+      "intuition": "Just like before: 8 slots, choices shrink each time.",
+      "common_mistakes": {
+        "A": "8 x 8."
+      }
+    }
+  },
+  {
+    "topic_slug": "factorial-thinking-practice",
+    "type": "mcq",
+    "difficulty": 4,
+    "question_text": "FINAL TEST: Without formula: Why is choosing and arranging 2 books from 5 equal to: 5 x 4?",
+    "options": [
+      {"id": "A", "text": "Because you only have 2 positions, so the process stops after filling slot 1 (5 choices) and slot 2 (4 choices)."},
+      {"id": "B", "text": "Because 5! divided by 2! is 5 x 4."},
+      {"id": "C", "text": "Because you subtract the 3 books you don't need."},
+      {"id": "D", "text": "Because 5 plus 4 is 9."}
+    ],
+    "correct_answer": "A",
+    "explanation": {
+      "step_by_step": "1. First slot: 5 choices\n2. Second slot: 4 choices\n3. No more slots exist.\n4. Multiply: 5 x 4 = 20",
+      "intuition": "This is the core intuition of permutation. You do NOT continue arranging remaining books. The process stops. You literally SEE: Slot 1 (5), Slot 2 (4).",
+      "tree": {
+        "root": "Permutation Slots",
+        "level1": {"name": "Slot 1", "options": ["5 choices"]},
+        "level2": {"name": "Slot 2", "options": ["4 remaining choices (Process stops)"]}
+      },
+      "common_mistakes": {
+        "B": "This uses the formula. We want you to understand WHY the math works without reciting the formula."
+      }
+    }
+  }
+]

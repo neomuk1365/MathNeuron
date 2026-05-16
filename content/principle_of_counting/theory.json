@@ -1,0 +1,126 @@
+{
+  "chapter_slug": "principle-of-counting",
+  "title": "The Principle of Counting",
+  "order": 1,
+  "description": "Master the real foundation of combinations. If this becomes automatic, permutations and combinations become almost trivial.",
+  "topics": [
+    {
+      "title": "Master Counting Principle",
+      "slug": "master-counting-principle",
+      "order": 1,
+      "content": [
+        {
+          "type": "text",
+          "value": "This is the real foundation. If this becomes automatic, permutations and combinations become almost trivial."
+        },
+        {
+          "type": "question",
+          "value": "Core Idea"
+        },
+        {
+          "type": "text",
+          "value": "If one thing can happen in **a** ways and another thing can happen in **b** ways, then total ways: **a × b**"
+        },
+        {
+          "type": "callout",
+          "style": "primary",
+          "value": "This is called the **multiplication/counting principle**."
+        }
+      ]
+    },
+    {
+      "title": "Real Intuition",
+      "slug": "real-intuition",
+      "order": 2,
+      "content": [
+        {
+          "type": "text",
+          "value": "Suppose you have **3 shirts** and **2 pants**. How many outfits?"
+        },
+        {
+          "type": "interactive_tree",
+          "config": {
+            "root": "Outfit",
+            "level1": {"name": "Shirt", "options": ["Shirt1", "Shirt2", "Shirt3"]},
+            "level2": {"name": "Pant", "options": ["Pant1", "Pant2"]}
+          }
+        },
+        {
+          "type": "text",
+          "value": "Your brain should SEE this:\n<br/>Shirt1 → Pant1, Pant2\n<br/>Shirt2 → Pant1, Pant2\n<br/>Shirt3 → Pant1, Pant2"
+        },
+        {
+          "type": "text",
+          "value": "So: **3 × 2 = 6**"
+        },
+        {
+          "type": "callout",
+          "style": "intuition",
+          "value": "**NOT** because a formula says so. Because: **Each shirt pairs with ALL pants.**"
+        }
+      ]
+    },
+    {
+      "title": "Another Example",
+      "slug": "another-example",
+      "order": 3,
+      "content": [
+        {
+          "type": "text",
+          "value": "2 burgers\n<br/>3 drinks\n<br/>4 desserts\n<br/>Total meals?"
+        },
+        {
+          "type": "interactive_tree",
+          "config": {
+            "root": "If 1 Burger is chosen:",
+            "level1": {"name": "Drink", "options": ["Drink 1", "Drink 2", "Drink 3"]},
+            "level2": {"name": "Dessert", "options": ["4 Desserts choices"]}
+          }
+        },
+        {
+          "type": "text",
+          "value": "Your brain should think:\n<br/>For EACH burger: **3 drink choices**\n<br/>For EACH drink: **4 dessert choices**"
+        },
+        {
+          "type": "formula",
+          "value": "2 \\times 3 \\times 4 = 24"
+        }
+      ]
+    },
+    {
+      "title": "Your New Mental Model",
+      "slug": "new-mental-model",
+      "order": 4,
+      "content": [
+        {
+          "type": "callout",
+          "style": "primary",
+          "value": "Whenever you see a problem ask: **'At this step how many choices exist?'** Then multiply. That is the counting principle."
+        }
+      ]
+    },
+    {
+      "title": "Practice Until Automatic",
+      "slug": "practice-automatic",
+      "order": 5,
+      "content": [
+        {
+          "type": "text",
+          "value": "Do these mentally."
+        },
+        {
+          "type": "text",
+          "value": "**Practice 1**\n<br/>4 t-shirts, 5 jeans. Total outfits?\n<br/>*Answer: 4 × 5 = 20*"
+        },
+        {
+          "type": "text",
+          "value": "**Practice 2**\n<br/>3 starters, 2 main courses, 4 desserts. Total meals?\n<br/>*Answer: 3 × 2 × 4 = 24*"
+        },
+        {
+          "type": "text",
+          "value": "**Practice 3**\n<br/>A password has: 2 letters, 3 digits.\n<br/>If each letter has 26 choices and each digit has 10 choices, total passwords?\n<br/>*Your brain should think: 26 × 26 × 10 × 10 × 10 = 26² × 10³*"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,314 @@
+[
+  {
+    "topic_slug": "practice-automatic",
+    "type": "mcq",
+    "difficulty": 1,
+    "question_text": "You have 2 shirts and 3 pants. How many outfits?",
+    "options": [
+      {"id": "A", "text": "5"},
+      {"id": "B", "text": "6"},
+      {"id": "C", "text": "9"},
+      {"id": "D", "text": "8"}
+    ],
+    "correct_answer": "B",
+    "explanation": {
+      "step_by_step": "1. Choices for shirt: 2\n2. Choices for pant: 3\n3. Multiply: 2 x 3 = 6",
+      "intuition": "Each shirt pairs with ALL pants. See the branches:",
+      "tree": {
+        "root": "Outfit",
+        "level1": {"name": "Shirt", "options": ["Shirt 1", "Shirt 2"]},
+        "level2": {"name": "Pant", "options": ["Pant 1", "Pant 2", "Pant 3"]}
+      },
+      "common_mistakes": {
+        "A": "You added the choices. Remember, choices branch out, so we multiply."
+      }
+    }
+  },
+  {
+    "topic_slug": "practice-automatic",
+    "type": "mcq",
+    "difficulty": 1,
+    "question_text": "You have 4 burgers and 2 drinks. How many meals?",
+    "options": [
+      {"id": "A", "text": "6"},
+      {"id": "B", "text": "8"},
+      {"id": "C", "text": "2"},
+      {"id": "D", "text": "16"}
+    ],
+    "correct_answer": "B",
+    "explanation": {
+      "step_by_step": "1. Choices for burger: 4\n2. Choices for drink: 2\n3. Multiply: 4 x 2 = 8",
+      "intuition": "For each burger, you have 2 drink choices. 4 groups of 2 is 8.",
+      "tree": {
+        "root": "1 Burger Choice",
+        "level1": {"name": "Drink", "options": ["Drink 1", "Drink 2"]}
+      },
+      "common_mistakes": {
+        "A": "You added instead of multiplying."
+      }
+    }
+  },
+  {
+    "topic_slug": "practice-automatic",
+    "type": "mcq",
+    "difficulty": 1,
+    "question_text": "A password has 1 letter and 1 digit. How many passwords? (26 letters, 10 digits)",
+    "options": [
+      {"id": "A", "text": "36"},
+      {"id": "B", "text": "260"},
+      {"id": "C", "text": "26"},
+      {"id": "D", "text": "100"}
+    ],
+    "correct_answer": "B",
+    "explanation": {
+      "step_by_step": "1. Choices for letter: 26\n2. Choices for digit: 10\n3. Multiply: 26 x 10 = 260",
+      "intuition": "Every single letter (A, B, C...) can be paired with 10 digits. So 26 groups of 10.",
+      "common_mistakes": {
+        "A": "Adding choices gives the number of ways to pick ONE character, not two."
+      }
+    }
+  },
+  {
+    "topic_slug": "practice-automatic",
+    "type": "mcq",
+    "difficulty": 1,
+    "question_text": "You can travel 3 ways to city A and 2 ways from A to B. Total routes?",
+    "options": [
+      {"id": "A", "text": "5"},
+      {"id": "B", "text": "6"},
+      {"id": "C", "text": "9"},
+      {"id": "D", "text": "8"}
+    ],
+    "correct_answer": "B",
+    "explanation": {
+      "step_by_step": "1. Ways to A: 3\n2. Ways A to B: 2\n3. Multiply: 3 x 2 = 6",
+      "intuition": "For every path you take to A, you have 2 options to continue. Branching logic means multiply.",
+      "common_mistakes": {
+        "A": "You added the paths. You have to travel BOTH segments."
+      }
+    }
+  },
+  {
+    "topic_slug": "practice-automatic",
+    "type": "mcq",
+    "difficulty": 1,
+    "question_text": "You own 5 caps and 4 shoes. How many combinations?",
+    "options": [
+      {"id": "A", "text": "9"},
+      {"id": "B", "text": "20"},
+      {"id": "C", "text": "16"},
+      {"id": "D", "text": "25"}
+    ],
+    "correct_answer": "B",
+    "explanation": {
+      "step_by_step": "1. Cap choices: 5\n2. Shoe choices: 4\n3. Multiply: 5 x 4 = 20",
+      "intuition": "Each cap pairs with all 4 shoes.",
+      "common_mistakes": {
+        "A": "Don't add when picking one of EACH."
+      }
+    }
+  },
+  {
+    "topic_slug": "practice-automatic",
+    "type": "mcq",
+    "difficulty": 2,
+    "question_text": "Pizza shop: 3 crusts and 4 toppings. How many pizzas (assuming 1 crust, 1 topping)?",
+    "options": [
+      {"id": "A", "text": "7"},
+      {"id": "B", "text": "12"},
+      {"id": "C", "text": "8"},
+      {"id": "D", "text": "9"}
+    ],
+    "correct_answer": "B",
+    "explanation": {
+      "step_by_step": "1. Crusts: 3\n2. Toppings: 4\n3. Multiply: 3 x 4 = 12",
+      "intuition": "Draw the tree: 3 crusts, each branches to 4 toppings.",
+      "common_mistakes": {
+        "A": "Added instead of multiplied."
+      }
+    }
+  },
+  {
+    "topic_slug": "practice-automatic",
+    "type": "mcq",
+    "difficulty": 2,
+    "question_text": "A code uses 2 digits. Each digit is 0–9. How many codes? Think in slots: [ ] [ ]",
+    "options": [
+      {"id": "A", "text": "20"},
+      {"id": "B", "text": "100"},
+      {"id": "C", "text": "90"},
+      {"id": "D", "text": "81"}
+    ],
+    "correct_answer": "B",
+    "explanation": {
+      "step_by_step": "1. Slot 1 choices: 10 (0 through 9)\n2. Slot 2 choices: 10\n3. Multiply: 10 x 10 = 100",
+      "intuition": "Every digit in the first slot can pair with 10 digits in the second. Think 00 to 99, which is 100 numbers.",
+      "common_mistakes": {
+        "A": "Added 10 + 10.",
+        "C": "Assumed 1-9 instead of 0-9."
+      }
+    }
+  },
+  {
+    "topic_slug": "practice-automatic",
+    "type": "mcq",
+    "difficulty": 2,
+    "question_text": "A lock uses 3 letters. How many codes?",
+    "options": [
+      {"id": "A", "text": "78"},
+      {"id": "B", "text": "26 * 3"},
+      {"id": "C", "text": "26 * 26 * 26"},
+      {"id": "D", "text": "26 * 25 * 24"}
+    ],
+    "correct_answer": "C",
+    "explanation": {
+      "step_by_step": "1. Slot 1: 26\n2. Slot 2: 26\n3. Slot 3: 26\n4. Multiply: 26^3",
+      "intuition": "Three independent slots, each has 26 possibilities. We multiply the choices for each step.",
+      "common_mistakes": {
+        "B": "Multiplied 26 by the number of slots instead of raising to the power.",
+        "D": "Assumed letters cannot be repeated. Locks usually allow repetition."
+      }
+    }
+  },
+  {
+    "topic_slug": "practice-automatic",
+    "type": "mcq",
+    "difficulty": 2,
+    "question_text": "You can choose 2 ice creams, 3 syrups, and 4 nuts. How many desserts?",
+    "options": [
+      {"id": "A", "text": "9"},
+      {"id": "B", "text": "24"},
+      {"id": "C", "text": "12"},
+      {"id": "D", "text": "14"}
+    ],
+    "correct_answer": "B",
+    "explanation": {
+      "step_by_step": "1. Ice creams: 2\n2. Syrups: 3\n3. Nuts: 4\n4. Multiply: 2 x 3 x 4 = 24",
+      "intuition": "For each ice cream (2), you have 3 syrups (2x3=6 base desserts), and for each of those 6, you have 4 nut choices (6x4=24).",
+      "common_mistakes": {
+        "A": "Added the choices instead of multiplying."
+      }
+    }
+  },
+  {
+    "topic_slug": "practice-automatic",
+    "type": "mcq",
+    "difficulty": 2,
+    "question_text": "You can take 3 buses and 5 trains. Total travel plans?",
+    "options": [
+      {"id": "A", "text": "15"},
+      {"id": "B", "text": "8"},
+      {"id": "C", "text": "3^5"},
+      {"id": "D", "text": "5^3"}
+    ],
+    "correct_answer": "A",
+    "explanation": {
+      "step_by_step": "1. Buses: 3\n2. Trains: 5\n3. Multiply: 3 x 5 = 15",
+      "intuition": "Every bus connects to all 5 train options.",
+      "common_mistakes": {
+        "B": "Added instead of multiplied."
+      }
+    }
+  },
+  {
+    "topic_slug": "practice-automatic",
+    "type": "mcq",
+    "difficulty": 3,
+    "question_text": "A website username: 1 letter followed by 2 digits. How many usernames?",
+    "options": [
+      {"id": "A", "text": "260"},
+      {"id": "B", "text": "2600"},
+      {"id": "C", "text": "46"},
+      {"id": "D", "text": "520"}
+    ],
+    "correct_answer": "B",
+    "explanation": {
+      "step_by_step": "1. Slot 1 (letter): 26\n2. Slot 2 (digit): 10\n3. Slot 3 (digit): 10\n4. Multiply: 26 x 10 x 10 = 2600",
+      "intuition": "Think in slots. [26] x [10] x [10]. Each choice independent.",
+      "common_mistakes": {
+        "A": "Only multiplied one digit instead of two.",
+        "C": "Added 26 + 10 + 10."
+      }
+    }
+  },
+  {
+    "topic_slug": "practice-automatic",
+    "type": "mcq",
+    "difficulty": 3,
+    "question_text": "Meal choices: 2 starters, 3 mains, 2 desserts. Total meals?",
+    "options": [
+      {"id": "A", "text": "7"},
+      {"id": "B", "text": "12"},
+      {"id": "C", "text": "10"},
+      {"id": "D", "text": "18"}
+    ],
+    "correct_answer": "B",
+    "explanation": {
+      "step_by_step": "1. Starters: 2\n2. Mains: 3\n3. Desserts: 2\n4. Multiply: 2 x 3 x 2 = 12",
+      "intuition": "Just keep branching. 2 branches into 3 branches into 2 branches.",
+      "common_mistakes": {
+        "A": "Added 2 + 3 + 2."
+      }
+    }
+  },
+  {
+    "topic_slug": "practice-automatic",
+    "type": "mcq",
+    "difficulty": 3,
+    "question_text": "You can buy 4 phones, 3 covers, and 2 chargers. Total purchase setups?",
+    "options": [
+      {"id": "A", "text": "9"},
+      {"id": "B", "text": "24"},
+      {"id": "C", "text": "18"},
+      {"id": "D", "text": "12"}
+    ],
+    "correct_answer": "B",
+    "explanation": {
+      "step_by_step": "1. Phones: 4\n2. Covers: 3\n3. Chargers: 2\n4. Multiply: 4 x 3 x 2 = 24",
+      "intuition": "You are making 3 choices sequentially. At each step, you ask 'How many choices exist?'. Multiply them.",
+      "common_mistakes": {
+        "A": "Added 4 + 3 + 2."
+      }
+    }
+  },
+  {
+    "topic_slug": "practice-automatic",
+    "type": "mcq",
+    "difficulty": 3,
+    "question_text": "A robot moves: 2 ways left/right, 3 ways forward, 2 ways up/down. Total movement patterns?",
+    "options": [
+      {"id": "A", "text": "7"},
+      {"id": "B", "text": "12"},
+      {"id": "C", "text": "24"},
+      {"id": "D", "text": "10"}
+    ],
+    "correct_answer": "B",
+    "explanation": {
+      "step_by_step": "1. L/R Ways: 2\n2. Forward Ways: 3\n3. U/D Ways: 2\n4. Multiply: 2 x 3 x 2 = 12",
+      "intuition": "Independent axes of movement means we multiply the options for each axis.",
+      "common_mistakes": {
+        "A": "Added axes."
+      }
+    }
+  },
+  {
+    "topic_slug": "practice-automatic",
+    "type": "mcq",
+    "difficulty": 3,
+    "question_text": "A student picks 3 notebooks and 5 pens. How many stationery sets?",
+    "options": [
+      {"id": "A", "text": "8"},
+      {"id": "B", "text": "15"},
+      {"id": "C", "text": "3^5"},
+      {"id": "D", "text": "5^3"}
+    ],
+    "correct_answer": "B",
+    "explanation": {
+      "step_by_step": "1. Notebooks: 3\n2. Pens: 5\n3. Multiply: 3 x 5 = 15",
+      "intuition": "Each notebook pairs with every pen.",
+      "common_mistakes": {
+        "A": "Added 3 + 5."
+      }
+    }
+  }
+]

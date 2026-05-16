@@ -1,0 +1,142 @@
+{
+  "chapter_slug": "factorial",
+  "title": "Factorial Intuition",
+  "order": 2,
+  "description": "Forget the symbol first. Understand shrinking choices during arrangement.",
+  "topics": [
+    {
+      "title": "Factorial Meaning",
+      "slug": "factorial-meaning",
+      "order": 1,
+      "content": [
+        {
+          "type": "text",
+          "value": "This scares people because schools teach the symbol before the meaning. Forget the symbol first."
+        },
+        {
+          "type": "callout",
+          "style": "primary",
+          "value": "**Factorial means:** 'How many ways can I arrange everything?'"
+        },
+        {
+          "type": "question",
+          "value": "Simplest Example"
+        },
+        {
+          "type": "text",
+          "value": "3 people: A, B, C. How many ways to arrange in a line? Let's THINK."
+        },
+        {
+          "type": "interactive_tree",
+          "config": {
+            "root": "Slots",
+            "level1": {"name": "First Slot", "options": ["3 Choices"]},
+            "level2": {"name": "Second Slot", "options": ["2 Remaining"]},
+            "level3": {"name": "Third Slot", "options": ["1 Remaining"]}
+          }
+        },
+        {
+          "type": "text",
+          "value": "**First position** choices: A, B, C (3).<br/>**Second position**: One already used. Remaining: 2.<br/>**Third position**: Remaining: 1."
+        },
+        {
+          "type": "formula",
+          "value": "3 \\times 2 \\times 1 = 6"
+        },
+        {
+          "type": "text",
+          "value": "Those arrangements are: ABC, ACB, BAC, BCA, CAB, CBA. THIS IS FACTORIAL. **3! = 3 × 2 × 1**."
+        }
+      ]
+    },
+    {
+      "title": "Why Factorial Exists",
+      "slug": "why-factorial-exists",
+      "order": 2,
+      "content": [
+        {
+          "type": "callout",
+          "style": "intuition",
+          "value": "Because arrangements naturally create decreasing choices:<br/>first slot → many choices<br/>second slot → fewer<br/>third slot → fewer"
+        },
+        {
+          "type": "question",
+          "value": "Another Example"
+        },
+        {
+          "type": "text",
+          "value": "5 students in a row. Choices: **5 × 4 × 3 × 2 × 1 = 120**. So, **5! = 120**."
+        },
+        {
+          "type": "interactive_tree",
+          "config": {
+            "root": "Arranging 5 Students",
+            "level1": {"name": "Slot 1", "options": ["5 Choices (Any student)"]},
+            "level2": {"name": "Slot 2", "options": ["4 Remaining Choices"]},
+            "level3": {"name": "Slot 3", "options": ["3 Remaining Choices..."]}
+          }
+        },
+        {
+          "type": "callout",
+          "style": "primary",
+          "value": "**CRITICAL INTUITION**<br/>Factorial is NOT random math. It is: **shrinking choices during arrangement.** That's all."
+        }
+      ]
+    },
+    {
+      "title": "Brain Rewire",
+      "slug": "brain-rewire",
+      "order": 3,
+      "content": [
+        {
+          "type": "text",
+          "value": "When you see **6!**, DO NOT think: 'formula'. Think: **6 choices, then 5, then 4, then 3, then 2, then 1** because choices shrink after every selection."
+        },
+        {
+          "type": "question",
+          "value": "Your New Visual Model"
+        },
+        {
+          "type": "text",
+          "value": "Imagine slots. **[ ] [ ] [ ]**<br/>You fill slots one by one. Every time: one object gets used, choices decrease. That shrinking creates factorial."
+        },
+        {
+          "type": "callout",
+          "style": "error",
+          "value": "**HUGE MISTAKE PEOPLE MAKE:**<br/>They memorize 5! = 120 without understanding WHY. You must ALWAYS see: first choice -> shrinking choices -> multiplication of shrinking choices."
+        }
+      ]
+    },
+    {
+      "title": "Important Training Method",
+      "slug": "important-training-method",
+      "order": 4,
+      "content": [
+        {
+          "type": "text",
+          "value": "For EVERY problem ask:<br/>**Step A:** 'What are the choices?'<br/>**Step B:** 'Are choices shrinking?'<br/>**Step C:** 'Does order matter?'"
+        },
+        {
+          "type": "text",
+          "value": "That’s the entire subject."
+        },
+        {
+          "type": "callout",
+          "style": "intuition",
+          "value": "For every problem ask: **'After choosing one thing, do choices reduce?'**<br/>If YES: factorial/permutation thinking starts.<br/>If NO: normal multiplication counting. This single observation changes everything."
+        }
+      ]
+    },
+    {
+      "title": "Factorial Thinking Practice",
+      "slug": "factorial-thinking-practice",
+      "order": 5,
+      "content": [
+        {
+          "type": "text",
+          "value": "Do NOT use formula immediately. Think: first slot, second slot, shrinking choices."
+        }
+      ]
+    }
+  ]
+}

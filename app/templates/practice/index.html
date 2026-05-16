@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-8">
+    <div class="text-center mb-8">
+        <h1>Practice Arena</h1>
+        <p class="text-secondary">Select a topic to test your intuition.</p>
+    </div>
+
+    <div style="max-width: 800px; margin: 0 auto;">
+        {% for chapter in practice_data %}
+            <div class="card mb-4">
+                <h3 class="mb-4 text-primary">{{ chapter.title }}</h3>
+                <div style="display: flex; flex-direction: column; gap: 1rem;">
+                    {% for topic in chapter.topics %}
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem; border: 1px solid var(--border-color); border-radius: 0.5rem;">
+                            <div>
+                                <h4 style="margin: 0;">{{ topic.title }}</h4>
+                                <div class="text-secondary" style="font-size: 0.875rem; margin-top: 0.25rem;">{{ topic.count }} Questions</div>
+                            </div>
+                            <button class="btn btn-primary start-quiz-btn" data-topic-id="{{ topic.id }}">
+                                Start Practice
+                            </button>
+                        </div>
+                        <div id="quiz-mount-{{ topic.id }}" class="quiz-container mt-4" style="border-top: none; padding-top: 0; display: none;"></div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/engines/quiz.js') }}"></script>
+<script>
+    const allQuestions = {{ all_questions_by_topic | safe }};
+    
+    document.addEventListener('DOMContentLoaded', () => {
+        const startBtns = document.querySelectorAll('.start-quiz-btn');
+        startBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const topicId = e.target.getAttribute('data-topic-id');
+                const mountId = `quiz-mount-${topicId}`;
+                const mountPoint = document.getElementById(mountId);
+                
+                // Hide other quizzes and show this one
+                document.querySelectorAll('.quiz-container').forEach(c => c.style.display = 'none');
+                mountPoint.style.display = 'block';
+                
+                // Initialize engine directly with preloaded data (0ms latency!)
+                const engine = new QuizEngine(mountId, topicId);
+                engine.initPreloaded(allQuestions[topicId]);
+            });
+        });
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,106 @@
+/* Callouts */
+.callout {
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  margin: 1.5rem 0;
+  border-left: 4px solid var(--primary-color);
+  background-color: var(--bg-accent);
+}
+
+.callout.intuition {
+  border-left-color: var(--warning-color);
+  background-color: var(--warning-bg);
+  color: var(--text-primary);
+}
+
+/* Quiz Options */
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.quiz-option {
+  padding: 1rem 1.5rem;
+  border: 2px solid var(--border-color);
+  border-radius: 0.5rem;
+  background-color: var(--bg-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.quiz-option:hover:not(.disabled) {
+  border-color: var(--primary-color);
+  background-color: rgba(59, 130, 246, 0.05);
+}
+
+.quiz-option.selected {
+  border-color: var(--primary-color);
+  background-color: rgba(59, 130, 246, 0.1);
+}
+
+.quiz-option.correct {
+  border-color: var(--success-color);
+  background-color: var(--success-bg);
+  animation: shake-correct 0.5s ease;
+}
+
+.quiz-option.wrong {
+  border-color: var(--error-color);
+  background-color: var(--error-bg);
+  animation: shake-wrong 0.5s ease;
+}
+
+.quiz-option.disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Explanation Panel */
+.explanation-panel {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  display: none;
+  animation: fade-in 0.3s ease forwards;
+}
+
+.explanation-panel.show {
+  display: block;
+}
+
+.explanation-header {
+  font-weight: 700;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.explanation-header.correct { color: var(--success-color); }
+.explanation-header.wrong { color: var(--error-color); }
+
+/* Animations */
+@keyframes shake-wrong {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-5px); }
+  40%, 80% { transform: translateX(5px); }
+}
+
+@keyframes shake-correct {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block extra_css %}
+<style>
+    .hero {
+        text-align: center;
+        padding: 6rem 2rem;
+        background: radial-gradient(circle at center, var(--bg-accent) 0%, var(--bg-primary) 100%);
+    }
+    
+    .hero h1 {
+        font-size: 4rem;
+        margin-bottom: 1.5rem;
+        background: linear-gradient(to right, var(--primary-color), var(--success-color));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    
+    .hero p {
+        font-size: 1.25rem;
+        color: var(--text-secondary);
+        max-width: 600px;
+        margin: 0 auto 2rem auto;
+    }
+    
+    .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        padding: 4rem 2rem;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="hero">
+    <h1>Stop Memorizing Formulas.</h1>
+    <p>Build deep mathematical intuition for Data Science and Machine Learning. Learn visually, interactively, and fearlessly.</p>
+    <div class="mt-4">
+        <a href="{{ url_for('main.learn') }}" class="btn btn-primary">Start Learning Now</a>
+    </div>
+</div>
+
+<div class="container features">
+    <div class="card text-center">
+        <h3>🧠 Intuition First</h3>
+        <p class="mt-2 text-secondary">We never start with a formula. We start with real-world scenarios and branching logic.</p>
+    </div>
+    <div class="card text-center">
+        <h3>🎯 Mistake Analysis</h3>
+        <p class="mt-2 text-secondary">When you get it wrong, we tell you exactly where your thinking broke down.</p>
+    </div>
+    <div class="card text-center">
+        <h3>🚀 ML Foundations</h3>
+        <p class="mt-2 text-secondary">Every concept builds toward the math you need for actual Machine Learning models.</p>
+    </div>
+</div>
+{% endblock %}
