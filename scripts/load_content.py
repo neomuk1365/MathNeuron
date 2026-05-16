@@ -1,6 +1,11 @@
 import json
 import os
+import sys
 from pathlib import Path
+
+# Ensure the root project directory is in the Python path
+sys.path.append(str(Path(__file__).resolve().parent.parent))
+
 from app import create_app, db
 from app.models import Chapter, Topic, Question
 
