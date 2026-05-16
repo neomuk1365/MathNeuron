@@ -1,11 +1,16 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, make_response, request
 from app.models import Chapter
 
 bp = Blueprint('main', __name__)
 
 @bp.route('/')
 def index():
-    return render_template('index.html')
+    return render_template(
+        'index.html',
+        og_title="Math Intuition Platform | Master Data Science Mathematics",
+        meta_description="A revolutionary platform teaching Mathematics for Data Science, Machine Learning, and Statistics. Build deep mathematical intuition instead of memorizing formulas.",
+        meta_keywords="Data Science Math, Machine Learning Mathematics, Statistics, Probability, Math Intuition, Artificial Intelligence Mathematics"
+    )
 
 @bp.route('/learn')
 def learn():
@@ -19,7 +24,15 @@ def chapter(slug):
     prev_chapter = Chapter.query.filter(Chapter.order < chapter.order).order_by(Chapter.order.desc()).first()
     next_chapter = Chapter.query.filter(Chapter.order > chapter.order).order_by(Chapter.order.asc()).first()
     
-    return render_template('learn/chapter.html', chapter=chapter, prev_chapter=prev_chapter, next_chapter=next_chapter)
+    return render_template(
+        'learn/chapter.html', 
+        chapter=chapter, 
+        prev_chapter=prev_chapter, 
+        next_chapter=next_chapter,
+        og_title=f"{chapter.title} | Math Intuition for Data Science",
+        meta_description=chapter.description or f"Master the intuition behind {chapter.title} for Machine Learning and Statistics.",
+        meta_keywords=f"{chapter.title}, Data Science Math, Machine Learning Mathematics, Statistics Intuition"
+    )
 
 @bp.route('/practice')
 def practice():
@@ -73,3 +86,38 @@ def dashboard():
                            correct_attempts=correct_attempts,
                            total_attempts=total_attempts,
                            xp=xp)
+
+@bp.route('/robots.txt')
+def robots():
+    lines = [
+        "User-agent: *",
+        "Allow: /",
+        f"Sitemap: {request.url_root}sitemap.xml"
+    ]
+    response = make_response("\n".join(lines))
+    response.headers["Content-Type"] = "text/plain"
+    return response
+
+@bp.route('/sitemap.xml')
+def sitemap():
+    chapters = Chapter.query.filter_by(is_published=True).order_by(Chapter.order).all()
+    
+    xml_lines = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+    ]
+    
+    # Add static routes
+    static_urls = ['/', '/learn', '/practice']
+    for url in static_urls:
+        xml_lines.append(f"  <url>\n    <loc>{request.url_root.rstrip('/')}{url}</loc>\n    <changefreq>weekly</changefreq>\n    <priority>1.0</priority>\n  </url>")
+        
+    # Add dynamic chapter routes
+    for chapter in chapters:
+        xml_lines.append(f"  <url>\n    <loc>{request.url_root}learn/{chapter.slug}</loc>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>")
+        
+    xml_lines.append('</urlset>')
+    
+    response = make_response("\n".join(xml_lines))
+    response.headers["Content-Type"] = "application/xml"
+    return response

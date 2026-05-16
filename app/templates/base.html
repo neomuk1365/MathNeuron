@@ -3,8 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Math Intuition{% endblock %}</title>
+    <title>{% block title %}{{ og_title|default('Math Intuition | Learn Data Science Mathematics') }}{% endblock %}</title>
     
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="{{ meta_description|default('A premium interactive educational platform teaching Mathematics for Data Science, Machine Learning, AI, and Statistics through intuition over memorization.') }}">
+    <meta name="keywords" content="{{ meta_keywords|default('Data Science Math, Machine Learning Mathematics, Statistics, Probability, Math Intuition, Combinatorics') }}">
+    <meta name="author" content="Math Neuron">
+    
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ og_title|default('Math Intuition | Learn Data Science Mathematics') }}">
+    <meta property="og:description" content="{{ og_description|default('Learn the foundational mathematics for AI and Data Science by building deep intuition instead of just memorizing formulas.') }}">
+    <meta property="og:url" content="{{ request.url }}">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ og_title|default('Math Intuition | Learn Data Science Mathematics') }}">
+    <meta name="twitter:description" content="{{ og_description|default('Learn the foundational mathematics for AI and Data Science by building deep intuition instead of just memorizing formulas.') }}">
+
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/components.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/interactive.css') }}">
